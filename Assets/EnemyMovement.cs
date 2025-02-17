@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
-    private void FixedUpdate()
+    private void FixedUpdate() // 用来处理物理相关的操作，比如移动，旋转等
     {
         Vector2 direction = (target.position - transform.position).normalized;
         rb.velocity = direction * moveSpeed;
