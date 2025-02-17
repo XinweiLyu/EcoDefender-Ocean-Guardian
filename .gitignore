@@ -1,0 +1,14 @@
+# Unity Generated Files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Visual Studio / JetBrains Rider
+.vs/
+*.csproj
+*.sln
+*.unityproj
