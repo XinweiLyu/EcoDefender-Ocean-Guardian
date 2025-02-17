@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float enemiesPerSecond = 0.5f; // 增加这个值，敌人生成速度加快
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float difficultyScalingFactor = 0.75f;
+
+//     [Header("Events")]
+//     [SerializeField] private UnityEvent onWaveStart;
 
     private int currentWave = 1;
     private float timeSinceLastSpawn;

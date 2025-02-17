@@ -4102,6 +4102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 966856787}
   - component: {fileID: 966856786}
+  - component: {fileID: 966856788}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -4121,7 +4122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be0bbe6342f2e04ea08a7377aa89ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoints:
+  startPoint:
   - {fileID: 657522431}
   path:
   - {fileID: 859875501}
@@ -4151,6 +4152,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966856788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966856785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e496976727589458a52545059fa1bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 1304230585}
+  baseEnemies: 8
+  enemiesPerSecond: 0.5
+  timeBetweenWaves: 5
+  difficultyScalingFactor: 0.75
 --- !u!1001 &973839760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8869,6 +8888,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 723842409805822564, guid: 528ada5896f8b5542b41b6f0c547ed60, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4034356407812608538, guid: 528ada5896f8b5542b41b6f0c547ed60, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -8913,7 +8936,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 723842409805822564, guid: 528ada5896f8b5542b41b6f0c547ed60, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
