@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour{
 
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 5f;
+    [SerializeField] private int bulletDamage = 1;
 
     public Transform target;
 
@@ -26,6 +27,7 @@ public class Bullet : MonoBehaviour{
 
     private void OnCollisionEnter2D(Collision2D other){
     // take health from enemy
+       //other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);// 伤害为1
        Destroy(gameObject);
     }
 

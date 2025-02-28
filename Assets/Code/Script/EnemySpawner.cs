@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Events;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -14,8 +14,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float difficultyScalingFactor = 0.75f;
 
-//     [Header("Events")]
+     [Header("Events")]
 //     [SerializeField] private UnityEvent onWaveStart;
+     public static UnityEvent onEnemyDestroy= new UnityEvent();
+
 
     private int currentWave = 1;
     private float timeSinceLastSpawn;
@@ -23,31 +25,51 @@ public class EnemySpawner : MonoBehaviour
     private int enemiesLeftToSpawn;
     private bool isSpawning= false;
 
-    private void Start()
-    {
-        StartWave();
+    private void Awake(){
+        onEnemyDestroy.AddListener(EnemyDestroyed);
     }
 
-    private void Update()
-    {
+    private void Start(){
+        //StartWave();
+        StartCoroutine(StartWave());
+    }
+
+    private void Update(){
         if (! isSpawning) return;
         timeSinceLastSpawn += Time.deltaTime;
         if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && (enemiesLeftToSpawn>0)){
+            Debug.Log("Spawn enemy");
             SpawnEnemy();
             enemiesLeftToSpawn--;
             enemiesAlive++;
             timeSinceLastSpawn = 0f;
         }
+        if (enemiesAlive == 0 &&  enemiesLeftToSpawn == 0){
+            EndWave();
+        }
     }
 
-    private void StartWave(){
-        isSpawning = true;
+    private void EnemyDestroyed(){
+        enemiesAlive--;
+    }
+
+
+    //private void StartWave(){
+    private IEnumerator StartWave(){ // 改成协程
+        yield return new WaitForSeconds(timeBetweenWaves);
+        isSpawning = true; // 开始生成敌人
         enemiesLeftToSpawn = EnemiesPerWave();
     }
 
-    private void SpawnEnemy()
-    {
-        Debug.Log("Spawning enemy");
+    private void EndWave(){
+        isSpawning = false; // 停止生成敌人
+        timeSinceLastSpawn = 0f;
+        currentWave++;
+        StartCoroutine(StartWave());
+    }
+
+    private void SpawnEnemy(){
+        //Debug.Log("Spawning enemy");
         GameObject prefabToSpawn = enemyPrefabs[0];
         Instantiate(prefabToSpawn, LevelManager.main.startPoint[0].position, Quaternion.identity);
     }

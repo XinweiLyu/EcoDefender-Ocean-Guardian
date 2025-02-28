@@ -24,11 +24,12 @@ public class EnemyMovement : MonoBehaviour
         {
             pathIndex++;
 
-            if (pathIndex >= LevelManager.main.path.Length){
+            if (pathIndex == LevelManager.main.path.Length){
+                EnemySpawner.onEnemyDestroy.Invoke(); // 通知 EnemySpawner 敌人死亡
                 Destroy(gameObject);
                 return;
             }else{
-            target = LevelManager.main.path[pathIndex];
+                target = LevelManager.main.path[pathIndex];
             }
         }
     }
