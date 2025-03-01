@@ -35,7 +35,7 @@ public class Turtle : MonoBehaviour
             }
         }
     }
-
+      // Shoot
     private void Fire(){
         Debug.Log("Firing");
         // 生成子弹，位置在firingPoint，方向是transform.forward，quaternion.identity是不旋转
