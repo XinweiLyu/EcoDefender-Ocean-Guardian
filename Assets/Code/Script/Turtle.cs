@@ -7,7 +7,7 @@ public class Turtle : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform turtleHeadRotation;
-    [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private LayerMask enemyMask; // 只检测敌人层
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firingPoint;
 
@@ -40,8 +40,8 @@ public class Turtle : MonoBehaviour
         Debug.Log("Firing");
         // 生成子弹，位置在firingPoint，方向是transform.forward，quaternion.identity是不旋转
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
-        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
-        bulletScript.SetTarget(target);
+        Bullet bulletScript = bulletObj.GetComponent<Bullet>(); // 获取子弹脚本
+        bulletScript.SetTarget(target); // 设置子弹的目标
     }
 
     private void FindTarget(){

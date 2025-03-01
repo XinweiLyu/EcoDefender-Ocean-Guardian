@@ -132,7 +132,7 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 6359952908680151988, guid: 261a892e3d5e6cf48a3fd7de83533166, type: 3}
   firingPoint: {fileID: 8265150704997401920}
   targetingRange: 3
   rotationSpeed: 200
@@ -186,8 +186,8 @@ MonoBehaviour:
   turtleHeadRotation: {fileID: 8265150704997401920}
   enemyMask:
     serializedVersion: 2
-    m_Bits: 0
-  bulletPrefab: {fileID: 667793395207703602, guid: 93621b0a28103074cb94d9c78b1e753e, type: 3}
+    m_Bits: 64
+  bulletPrefab: {fileID: 6359952908680151988, guid: 261a892e3d5e6cf48a3fd7de83533166, type: 3}
   firingPoint: {fileID: 8265150704997401920}
   targetingRange: 3
   rotationSpeed: 5
