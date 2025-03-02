@@ -29,6 +29,15 @@ public class Plot : MonoBehaviour
 
         //生成塔
         Tower towerToBuild = BuildManager.main.GetSelectedTower();
+        // 如果金币不够，不生成塔
+        //??? 没有显示
+        if (towerToBuild.cost > LevelManager.main.currency){
+            Debug.Log("Not enough currency to build this tower!");
+            return;
+        }
+
+        LevelManager.main.SpendCurrency(towerToBuild.cost); // 花费金币
+
         tower = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity); // 在当前位置生成塔
 
     }
