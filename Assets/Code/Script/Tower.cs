@@ -1,17 +1,17 @@
 using System;
 using UnityEngine;
 
-[SerializeField]
+[Serializable]
 public class Tower{
+
     public string name;
     public int cost;
     public GameObject prefab;
 
-    public Tower(string name, int cost, GameObject prefab){
-        this.name = name;
-        this.cost = cost;
-        this.prefab = prefab;
+    public Tower(string _name, int _cost, GameObject _prefab){
+        name = _name;
+        cost = _cost;
+        prefab = _prefab;
     }
-        
 
 }
