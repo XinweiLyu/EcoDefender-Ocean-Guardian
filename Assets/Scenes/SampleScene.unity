@@ -5793,6 +5793,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 4034356407812608538, guid: 528ada5896f8b5542b41b6f0c547ed60, type: 3}
+  - {fileID: 4034356407812608538, guid: c1b7b055d99a7774ebde592e6fbc3997, type: 3}
+  - {fileID: 4034356407812608538, guid: c97e5c7ad0407844da1a6c4b4e7016ae, type: 3}
+  - {fileID: 4034356407812608538, guid: 88d306d5b53d9724bae47cdf9c4ddb2d, type: 3}
+  - {fileID: 4034356407812608538, guid: 9f87f934285a9f44594145285079be1b, type: 3}
+  - {fileID: 4034356407812608538, guid: a69982aa062273144b41c6d475b57321, type: 3}
   baseEnemies: 8
   enemiesPerSecond: 0.5
   timeBetweenWaves: 1

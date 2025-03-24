@@ -68,7 +68,7 @@ public class EnemySpawner : MonoBehaviour
         isSpawning = false; // 停止生成敌人
         timeSinceLastSpawn = 0f;
         currentWave++;
-        if (currentWave <= 2)
+        if (currentWave <= 6)
         {
             // 让所有波次都显示知识点弹窗
             if (KnowledgePopup.Instance != null)
@@ -84,7 +84,8 @@ public class EnemySpawner : MonoBehaviour
     }
     private void SpawnEnemy(){
         //Debug.Log("Spawning enemy");
-        GameObject prefabToSpawn = enemyPrefabs[0];
+        int enemyIndex = (currentWave - 1) % enemyPrefabs.Length;
+        GameObject prefabToSpawn = enemyPrefabs[enemyIndex];
         Instantiate(prefabToSpawn, LevelManager.main.startPoint[0].position, Quaternion.identity);
     }
 
