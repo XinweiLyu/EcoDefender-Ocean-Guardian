@@ -68,10 +68,10 @@ public class Turtle2 : MonoBehaviour
                                         targetRotation, rotationSpeed * Time.deltaTime);
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Handles.color = Color.red;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
-    }
+//     private void OnDrawGizmosSelected()
+//     {
+//         Handles.color = Color.red;
+//         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
+//     }
 
 }
